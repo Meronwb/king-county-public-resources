@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Access to Public Resources in King County</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <nav>
+      <h1>KC Resources</h1>
+      <ul>
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="map1.html">Dashboard</a></li>
+        <li><a href="map2.html">Density Map</a></li>
+        <li><a href="map3.html">Choropleth Map</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Intro Section -->
+  <main>
+    <section>
+      <h2>Mapping Access to Public Resources in King County</h2>
+      <p>
+        This project explores the spatial distribution of key public resources
+        across King County, Washington, including public health clinics,
+        community centers, libraries, and parks. By visualizing where these
+        resources are located, we aim to identify patterns of accessibility
+        and potential gaps in service across neighborhoods.
+      </p>
+
+      <p>
+        Access to public resources plays an important role in community
+        well-being, education, public health, and overall quality of life.
+        This project uses interactive web maps to highlight how access
+        to these resources varies across different areas of King County.
+      </p>
+
+      <a href="map1.html">
+        <button>Explore the Dashboard</button>
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      GEOG 458 Final Project – Group 05<br>
+      Data sources: King County GIS Open Data, Seattle GeoData
+    </p>
+  </footer>
+
+</body>
+</html>
