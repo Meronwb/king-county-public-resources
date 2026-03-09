@@ -1,5 +1,6 @@
 // ============================================================
 // Map 3 – Choropleth: resource count per census tract
+// Data loaded via <script> tag in map3.html (no server needed)
 // ============================================================
 
 const map = L.map('map', {
@@ -83,17 +84,13 @@ function onEachFeature(_feat, layer) {
   });
 }
 
-// ---- Load census tracts (has precomputed resource_count) ----
-fetch('data/census_tracts.geojson')
-  .then(r => r.json())
-  .then(data => {
-    geojsonLayer = L.geoJSON(data, {
-      style: tractStyle,
-      onEachFeature
-    }).addTo(map);
+// ---- Load census tracts from global censusTractsData (data/census_tracts.js) ----
+geojsonLayer = L.geoJSON(censusTractsData, {
+  style: tractStyle,
+  onEachFeature
+}).addTo(map);
 
-    document.getElementById('loading').style.display = 'none';
-  });
+document.getElementById('loading').style.display = 'none';
 
 // ---- Legend ----
 const legend = L.control({ position: 'bottomleft' });

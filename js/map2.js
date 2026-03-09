@@ -1,5 +1,6 @@
 // ============================================================
 // Map 2 – Density / Heatmap
+// Data loaded via <script> tags in map2.html (no server needed)
 // ============================================================
 
 const map = L.map('map', {
@@ -13,7 +14,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
-// ---- Heatmap layer options per resource type ----
+// ---- Heatmap options per resource type ----
 const heatOptions = {
   all:       { radius: 25, blur: 20, maxZoom: 17, gradient: { 0.2: '#0000ff', 0.4: '#00ffff', 0.6: '#00ff00', 0.8: '#ffff00', 1.0: '#ff0000' } },
   library:   { radius: 30, blur: 22, maxZoom: 17, gradient: { 0.4: '#bfdbfe', 0.7: '#3b82f6', 1.0: '#1d4ed8' } },
@@ -22,50 +23,36 @@ const heatOptions = {
   park:      { radius: 20, blur: 18, maxZoom: 17, gradient: { 0.4: '#d9f99d', 0.7: '#84cc16', 1.0: '#3f6212' } }
 };
 
-// Store raw latlng arrays once fetched
-const points = { library: [], community: [], health: [], park: [] };
-
-// Active heat layer
-let currentHeatLayer = null;
-let loadedCount = 0;
-
+// ---- Convert GeoJSON features to [lat, lng, intensity] ----
 function toLatLngs(features) {
   return features
     .filter(f => f.geometry && f.geometry.type === 'Point')
     .map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0], 1]);
 }
 
+// Build point arrays from the pre-loaded global variables
+const points = {
+  library:   toLatLngs(librariesData.features),
+  community: toLatLngs(communityCentersData.features),
+  health:    toLatLngs(healthClinicsData.features),
+  park:      toLatLngs(parksData.features)
+};
+
+let currentHeatLayer = null;
+
 function renderHeat(type) {
   if (currentHeatLayer) map.removeLayer(currentHeatLayer);
 
-  let pts;
-  if (type === 'all') {
-    pts = [...points.library, ...points.community, ...points.health, ...points.park];
-  } else {
-    pts = points[type];
-  }
+  const pts = type === 'all'
+    ? [...points.library, ...points.community, ...points.health, ...points.park]
+    : points[type];
 
   currentHeatLayer = L.heatLayer(pts, heatOptions[type] || heatOptions.all);
   currentHeatLayer.addTo(map);
 
-  // Update button states
   document.querySelectorAll('.heat-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.type === type);
   });
-}
-
-// ---- Fetch all datasets ----
-fetch('data/libraries.geojson').then(r => r.json()).then(d => { points.library = toLatLngs(d.features); checkLoaded(); });
-fetch('data/community_centers.geojson').then(r => r.json()).then(d => { points.community = toLatLngs(d.features); checkLoaded(); });
-fetch('data/health_clinics.geojson').then(r => r.json()).then(d => { points.health = toLatLngs(d.features); checkLoaded(); });
-fetch('data/parks_points.geojson').then(r => r.json()).then(d => { points.park = toLatLngs(d.features); checkLoaded(); });
-
-function checkLoaded() {
-  loadedCount++;
-  if (loadedCount >= 4) {
-    document.getElementById('loading').style.display = 'none';
-    renderHeat('all');
-  }
 }
 
 // ---- Custom toggle control ----
@@ -118,3 +105,7 @@ legend.onAdd = function () {
   return div;
 };
 legend.addTo(map);
+
+// ---- Init ----
+document.getElementById('loading').style.display = 'none';
+renderHeat('all');

@@ -98,17 +98,12 @@ King County census tracts shaded by resource count. Features:
 
 ## Running Locally
 
-The site currently uses `fetch()` to load GeoJSON files, so it requires a local HTTP server (opening `index.html` directly in the browser will not work).
+Just open `index.html` directly in your browser — no server required.
 
-```bash
-# From the project root:
-python3 -m http.server 8000
-```
-
-Then open `http://localhost:8000` in your browser.
+All GeoJSON datasets are pre-loaded as JavaScript variables via `<script>` tags (e.g. `data/libraries.js`), so the maps work without any local server setup.
 
 ---
 
 ## AI Disclosure
 
-AI was used in this project for helping locate data source leads and to clean up grammatical errors. AI was not used to write or complete any components where AI use is prohibited.
+AI was used in this project for helping locate data source leads and to clean up grammatical errors. AI was also used to comment on code for code qulaity and legibility. AI was not used to write or complete any components where AI use is prohibited.
