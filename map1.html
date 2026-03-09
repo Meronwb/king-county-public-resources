@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard – KC Resources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Leaflet MarkerCluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+</head>
+<body>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <span>Loading resources…</span>
+  </div>
+
+  <header>
+    <nav>
+      <h1>KC Resources</h1>
+      <ul>
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="map1.html" class="active">Dashboard</a></li>
+        <li><a href="map2.html">Density Map</a></li>
+        <li><a href="map3.html">Choropleth Map</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="map-header">
+    <div>
+      <h2>Resource Dashboard</h2>
+      <p>Click a marker for details. Use the layer control (top right) to toggle resource types.</p>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <footer>
+    <p>GEOG 458 Final Project – Group 05 &nbsp;|&nbsp; Data: King County GIS Open Data, Seattle GeoData</p>
+  </footer>
+
+  <script src="js/map1.js"></script>
+</body>
+</html>

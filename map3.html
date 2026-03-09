@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choropleth Map – KC Resources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <span>Loading census tract data…</span>
+  </div>
+
+  <header>
+    <nav>
+      <h1>KC Resources</h1>
+      <ul>
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="map1.html">Dashboard</a></li>
+        <li><a href="map2.html">Density Map</a></li>
+        <li><a href="map3.html" class="active">Choropleth Map</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="map-header">
+    <div>
+      <h2>Choropleth Map – Resource Concentration by Census Tract</h2>
+      <p>Each tract is shaded by the number of public resources within it. Hover to inspect.</p>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Hover info box -->
+  <div id="info-box" style="
+    position:fixed; bottom:60px; right:16px; z-index:500;
+    background:rgba(255,255,255,0.95); padding:12px 16px; border-radius:6px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2); font-size:0.83rem; min-width:180px;
+    pointer-events:none;
+  ">
+    <strong style="color:#1a3a5c;">Hover over a tract</strong>
+  </div>
+
+  <footer>
+    <p>GEOG 458 Final Project – Group 05 &nbsp;|&nbsp; Data: King County GIS Open Data, Seattle GeoData</p>
+  </footer>
+
+  <script src="js/map3.js"></script>
+</body>
+</html>

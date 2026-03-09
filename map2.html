@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Density Map – KC Resources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Leaflet.heat -->
+  <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+</head>
+<body>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <span>Loading density data…</span>
+  </div>
+
+  <header>
+    <nav>
+      <h1>KC Resources</h1>
+      <ul>
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="map1.html">Dashboard</a></li>
+        <li><a href="map2.html" class="active">Density Map</a></li>
+        <li><a href="map3.html">Choropleth Map</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="map-header">
+    <div>
+      <h2>Resource Density Map</h2>
+      <p>Heatmap showing concentration of public resources. Use toggles to filter by type.</p>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <footer>
+    <p>GEOG 458 Final Project – Group 05 &nbsp;|&nbsp; Data: King County GIS Open Data, Seattle GeoData</p>
+  </footer>
+
+  <script src="js/map2.js"></script>
+</body>
+</html>

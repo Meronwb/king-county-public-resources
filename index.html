@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Access to Public Resources in King County</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <h1>KC Resources</h1>
+      <ul>
+        <li><a href="index.html" class="active">Introduction</a></li>
+        <li><a href="map1.html">Dashboard</a></li>
+        <li><a href="map2.html">Density Map</a></li>
+        <li><a href="map3.html">Choropleth Map</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="intro">
+    <div class="intro-card">
+      <h2>Mapping Access to Public Resources in King County</h2>
+      <p>
+        This project explores the spatial distribution of key public resources
+        across King County, Washington — including public health clinics,
+        community centers, libraries, and parks. By visualizing where these
+        resources are located, we aim to identify patterns of accessibility
+        and potential gaps in service across neighborhoods.
+      </p>
+      <p>
+        Access to public resources plays an important role in community
+        well-being, education, public health, and overall quality of life.
+        This project uses interactive web maps to highlight how access
+        to these resources varies across different areas of King County.
+      </p>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+        <a href="map1.html" class="btn">Explore the Dashboard</a>
+        <a href="map2.html" class="btn" style="background:#4b6584;">View Density Map</a>
+        <a href="map3.html" class="btn" style="background:#4b6584;">View Choropleth</a>
+      </div>
+
+      <div style="margin-top:32px;display:flex;gap:24px;flex-wrap:wrap;">
+        <div style="text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:#1a3a5c;">27</div>
+          <div style="font-size:0.85rem;color:#666;">Libraries</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:#16a34a;">46</div>
+          <div style="font-size:0.85rem;color:#666;">Community Centers</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:#dc2626;">32</div>
+          <div style="font-size:0.85rem;color:#666;">Health Clinics</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:2rem;font-weight:700;color:#65a30d;">1,514</div>
+          <div style="font-size:0.85rem;color:#666;">Parks</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      GEOG 458 Final Project – Group 05 &nbsp;|&nbsp;
+      Data sources: King County GIS Open Data, Seattle GeoData
+    </p>
+  </footer>
+
+</body>
+</html>
