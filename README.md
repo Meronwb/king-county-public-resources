@@ -4,6 +4,8 @@
 
 **Members:** Meron Birhanu, Emmanual Tadesse, Abdulbasit Abdalla, Moozy Zhou
 
+**Live site:** [https://meronwb.github.io/king-county-public-resources/](https://meronwb.github.io/king-county-public-resources/)
+
 ---
 
 ## Project Overview
@@ -96,11 +98,11 @@ King County census tracts shaded by resource count. Features:
 
 ---
 
-## Running Locally
+## Viewing the Site
 
-Just open `index.html` directly in your browser — no server required.
+**Online:** Visit the live site at [https://meronwb.github.io/king-county-public-resources/](https://meronwb.github.io/king-county-public-resources/)
 
-All GeoJSON datasets are pre-loaded as JavaScript variables via `<script>` tags (e.g. `data/libraries.js`), so the maps work without any local server setup.
+**Locally:** Just open `index.html` directly in your browser — no server required. All GeoJSON datasets are pre-loaded as JavaScript variables via `<script>` tags, so the maps work without any local server setup.
 
 ---
 
