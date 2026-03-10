@@ -59,27 +59,69 @@ function renderHeat(type) {
 const toggleControl = L.control({ position: 'topright' });
 toggleControl.onAdd = function () {
   const div = L.DomUtil.create('div');
-  div.style.cssText = 'background:rgba(15,15,15,0.85);padding:10px 14px;border-radius:6px;color:#fff;font-family:sans-serif;font-size:0.82rem;min-width:160px;';
+  div.style.cssText = `
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(60,60,67,0.18);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.06);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.82rem;
+    min-width: 168px;
+    -webkit-font-smoothing: antialiased;
+  `;
   div.innerHTML = `
-    <div style="font-weight:700;margin-bottom:8px;border-bottom:1px solid #444;padding-bottom:4px;">Show Layer</div>
-    <button class="heat-btn active" data-type="all"       style="background:#6366f1">All Resources</button>
-    <button class="heat-btn"        data-type="library"   style="background:#2563eb">Libraries</button>
-    <button class="heat-btn"        data-type="community" style="background:#16a34a">Community Centers</button>
-    <button class="heat-btn"        data-type="health"    style="background:#dc2626">Health Clinics</button>
-    <button class="heat-btn"        data-type="park"      style="background:#65a30d">Parks</button>
+    <div style="font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:rgba(60,60,67,0.5);margin-bottom:8px;">Show Layer</div>
+    <button class="heat-btn active" data-type="all"       data-color="#4f46e5">All Resources</button>
+    <button class="heat-btn"        data-type="library"   data-color="#2563eb">Libraries</button>
+    <button class="heat-btn"        data-type="community" data-color="#16a34a">Community Centers</button>
+    <button class="heat-btn"        data-type="health"    data-color="#dc2626">Health Clinics</button>
+    <button class="heat-btn"        data-type="park"      data-color="#65a30d">Parks</button>
   `;
 
   div.querySelectorAll('.heat-btn').forEach(btn => {
+    const color = btn.dataset.color;
     btn.style.cssText = `
-      display:block; width:100%; margin:3px 0; padding:5px 8px; border:none; border-radius:4px;
-      color:#fff; cursor:pointer; font-size:0.8rem; text-align:left; opacity:0.65;
+      display: block; width: 100%; margin: 3px 0;
+      padding: 6px 10px; border: 1px solid transparent;
+      border-radius: 999px; cursor: pointer;
+      font-size: 0.8rem; font-weight: 500; text-align: left;
+      font-family: inherit; letter-spacing: -0.01em;
+      background: transparent; color: rgba(60,60,67,0.75);
+      transition: all 0.15s cubic-bezier(0.4,0,0.2,1);
     `;
-    btn.addEventListener('click', () => renderHeat(btn.dataset.type));
+    btn.addEventListener('mouseenter', () => {
+      if (!btn.classList.contains('active')) {
+        btn.style.background = `${color}18`;
+        btn.style.color = color;
+      }
+    });
+    btn.addEventListener('mouseleave', () => {
+      if (!btn.classList.contains('active')) {
+        btn.style.background = 'transparent';
+        btn.style.color = 'rgba(60,60,67,0.75)';
+      }
+    });
+    btn.addEventListener('click', () => {
+      renderHeat(btn.dataset.type);
+      div.querySelectorAll('.heat-btn').forEach(b => {
+        b.style.background = 'transparent';
+        b.style.color = 'rgba(60,60,67,0.75)';
+        b.style.borderColor = 'transparent';
+      });
+      btn.style.background = `${color}18`;
+      btn.style.color = color;
+      btn.style.borderColor = `${color}40`;
+    });
   });
 
-  const style = document.createElement('style');
-  style.textContent = '.heat-btn.active { opacity: 1 !important; font-weight: 700; }';
-  document.head.appendChild(style);
+  // Set initial active state
+  const firstBtn = div.querySelector('[data-type="all"]');
+  firstBtn.style.background = '#4f46e518';
+  firstBtn.style.color = '#4f46e5';
+  firstBtn.style.borderColor = '#4f46e540';
 
   L.DomEvent.disableClickPropagation(div);
   return div;

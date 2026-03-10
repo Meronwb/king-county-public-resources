@@ -77,8 +77,6 @@ King County census tracts shaded by resource count. Features:
 | `data/parks_points.geojson` | Points | Park centroids (derived from polygon data) |
 | `data/census_tracts.geojson` | Polygons | King County census tracts with `resource_count` field |
 
-> **Note:** The original `parks.geojson` is a 17MB polygon file. `parks_points.geojson` was precomputed as polygon centroids to keep the site fast in the browser. Similarly, `resource_count` per census tract was precomputed using a point-in-polygon algorithm rather than computed at runtime.
-
 ---
 
 ## Data Sources

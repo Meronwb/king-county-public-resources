@@ -11,7 +11,7 @@
 
   <header>
     <nav>
-      <h1>KC Resources</h1>
+      <a href="index.html" class="nav-brand">KC Resources</a>
       <ul>
         <li><a href="index.html" class="active">Introduction</a></li>
         <li><a href="map1.html">Dashboard</a></li>
@@ -24,7 +24,10 @@
 
   <main class="intro">
     <div class="intro-card">
-      <h2>Mapping Access to Public Resources in King County</h2>
+
+      <div class="intro-eyebrow">GEOG 458 &nbsp;·&nbsp; Group 05</div>
+      <h2>Mapping Access to<br>Public Resources in<br>King County</h2>
+
       <p>
         This project explores the spatial distribution of key public resources
         across King County, Washington — including public health clinics,
@@ -32,45 +35,50 @@
         resources are located, we aim to identify patterns of accessibility
         and potential gaps in service across neighborhoods.
       </p>
+
       <p>
         Access to public resources plays an important role in community
         well-being, education, public health, and overall quality of life.
-        This project uses interactive web maps to highlight how access
-        to these resources varies across different areas of King County.
+        Use the maps below to explore how these resources are distributed
+        across different parts of King County.
       </p>
 
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
-        <a href="map1.html" class="btn">Explore the Dashboard</a>
-        <a href="map2.html" class="btn" style="background:#4b6584;">View Density Map</a>
-        <a href="map3.html" class="btn" style="background:#4b6584;">View Choropleth</a>
+      <!-- Resource stats -->
+      <div class="stat-row">
+        <div class="stat-chip">
+          <div class="stat-dot" style="background:#2563EB"></div>
+          <span class="stat-num">27</span>
+          <span class="stat-label">Libraries</span>
+        </div>
+        <div class="stat-chip">
+          <div class="stat-dot" style="background:#16A34A"></div>
+          <span class="stat-num">46</span>
+          <span class="stat-label">Community Centers</span>
+        </div>
+        <div class="stat-chip">
+          <div class="stat-dot" style="background:#DC2626"></div>
+          <span class="stat-num">32</span>
+          <span class="stat-label">Health Clinics</span>
+        </div>
+        <div class="stat-chip">
+          <div class="stat-dot" style="background:#65A30D"></div>
+          <span class="stat-num">1,514</span>
+          <span class="stat-label">Parks</span>
+        </div>
       </div>
 
-      <div style="margin-top:32px;display:flex;gap:24px;flex-wrap:wrap;">
-        <div style="text-align:center;">
-          <div style="font-size:2rem;font-weight:700;color:#1a3a5c;">27</div>
-          <div style="font-size:0.85rem;color:#666;">Libraries</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:2rem;font-weight:700;color:#16a34a;">46</div>
-          <div style="font-size:0.85rem;color:#666;">Community Centers</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:2rem;font-weight:700;color:#dc2626;">32</div>
-          <div style="font-size:0.85rem;color:#666;">Health Clinics</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:2rem;font-weight:700;color:#65a30d;">1,514</div>
-          <div style="font-size:0.85rem;color:#666;">Parks</div>
-        </div>
+      <!-- CTA buttons -->
+      <div class="btn-row">
+        <a href="map1.html" class="btn btn-primary">Explore the Dashboard →</a>
+        <a href="map2.html" class="btn btn-secondary">Density Map</a>
+        <a href="map3.html" class="btn btn-secondary">Choropleth Map</a>
       </div>
+
     </div>
   </main>
 
   <footer>
-    <p>
-      GEOG 458 Final Project – Group 05 &nbsp;|&nbsp;
-      Data sources: King County GIS Open Data, Seattle GeoData
-    </p>
+    <p>GEOG 458 Final Project – Group 05 &nbsp;·&nbsp; Data: King County GIS Open Data &amp; Seattle GeoData</p>
   </footer>
 
 </body>

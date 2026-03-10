@@ -10,7 +10,7 @@
 
   <header>
     <nav>
-      <h1>KC Resources</h1>
+      <a href="index.html" class="nav-brand">KC Resources</a>
       <ul>
         <li><a href="index.html">Introduction</a></li>
         <li><a href="map1.html">Dashboard</a></li>
@@ -22,56 +22,72 @@
   </header>
 
   <main class="about">
-    <h2>About This Project</h2>
-    <p>
-      This project was created for GEOG 458 at the University of Washington. Our goal is to
-      visualize the spatial distribution of public resources across King County, Washington,
-      and highlight areas of concentrated access as well as potential gaps in service.
-    </p>
+    <div class="about-inner">
 
-    <h3>Team Members</h3>
-    <ul>
-      <li>Meron Birhanu</li>
-      <li>Emmanual Tadesse</li>
-      <li>Abdulbasit Abdalla</li>
-      <li>Moozy Zhou</li>
-    </ul>
+      <h2>About This Project</h2>
 
-    <h3>Maps</h3>
-    <ul>
-      <li><strong>Dashboard (Map 1)</strong> – Interactive point map showing all four resource types with layer toggles and popups containing name, address, and links.</li>
-      <li><strong>Density Map (Map 2)</strong> – Heatmap visualizing the geographic concentration of resources. Switch between resource types using the layer control.</li>
-      <li><strong>Choropleth Map (Map 3)</strong> – King County census tracts shaded by the number of public resources within each tract. Hover to see tract details.</li>
-    </ul>
+      <div class="about-card">
+        <h3>Overview</h3>
+        <p>
+          Created for GEOG 458 at the University of Washington, this project visualizes
+          the spatial distribution of public resources across King County, Washington.
+          Our goal is to highlight where access is concentrated and where gaps in service exist,
+          supporting conversations around spatial equity and infrastructure accessibility.
+        </p>
+      </div>
 
-    <h3>Data Sources</h3>
-    <ul>
-      <li><a href="https://data-seattlecitygis.opendata.arcgis.com/" target="_blank">Seattle GeoData</a> – Seattle Public Libraries, Community Centers, Parks</li>
-      <li><a href="https://gis-kingcounty.opendata.arcgis.com/" target="_blank">King County GIS Open Data</a> – Public Health Clinics, Census Tracts</li>
-      <li><a href="https://geo.wa.gov/" target="_blank">Washington State Geoportal</a></li>
-    </ul>
+      <div class="about-card">
+        <h3>Team</h3>
+        <ul>
+          <li>Meron Birhanu</li>
+          <li>Emmanual Tadesse</li>
+          <li>Abdulbasit Abdalla</li>
+          <li>Moozy Zhou</li>
+        </ul>
+      </div>
 
-    <h3>Tools & Libraries</h3>
-    <ul>
-      <li><a href="https://leafletjs.com/" target="_blank">Leaflet.js</a> – Interactive web mapping</li>
-      <li><a href="https://github.com/Leaflet/Leaflet.markercluster" target="_blank">Leaflet.markercluster</a> – Marker clustering for parks layer</li>
-      <li><a href="https://github.com/Leaflet/Leaflet.heat" target="_blank">Leaflet.heat</a> – Heatmap density visualization</li>
-      <li><a href="https://carto.com/basemaps/" target="_blank">CARTO Basemaps</a> – Map tiles</li>
-    </ul>
+      <div class="about-card">
+        <h3>Maps</h3>
+        <ul>
+          <li><strong>Dashboard (Map 1)</strong> – Interactive point map with layer toggles and popups showing name, address, and links for each resource.</li>
+          <li><strong>Density Map (Map 2)</strong> – Heatmap visualizing geographic concentration of resources. Switch between resource types using the layer control.</li>
+          <li><strong>Choropleth Map (Map 3)</strong> – Census tracts shaded by resource count. Hover to inspect individual tracts.</li>
+        </ul>
+      </div>
 
-    <h3>AI Disclosure</h3>
-    <p>
-      AI was used in this project for helping locate data source leads and to clean up
-      grammatical errors. AI was not used to write or complete any components where AI
-      use is prohibited.
-    </p>
+      <div class="about-card">
+        <h3>Data Sources</h3>
+        <ul>
+          <li><a href="https://data-seattlecitygis.opendata.arcgis.com/" target="_blank">Seattle GeoData</a> – Libraries, Community Centers, Parks</li>
+          <li><a href="https://gis-kingcounty.opendata.arcgis.com/" target="_blank">King County GIS Open Data</a> – Public Health Clinics, Census Tracts</li>
+          <li><a href="https://geo.wa.gov/" target="_blank">Washington State Geoportal</a></li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <h3>Tools &amp; Libraries</h3>
+        <ul>
+          <li><a href="https://leafletjs.com/" target="_blank">Leaflet.js</a> v1.9.4 – Interactive web mapping</li>
+          <li><a href="https://github.com/Leaflet/Leaflet.markercluster" target="_blank">Leaflet.markercluster</a> v1.5.3 – Marker clustering</li>
+          <li><a href="https://github.com/Leaflet/Leaflet.heat" target="_blank">Leaflet.heat</a> v0.2.0 – Heatmap layer</li>
+          <li><a href="https://carto.com/basemaps/" target="_blank">CARTO Basemaps</a> – Map tiles</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <h3>AI Disclosure</h3>
+        <p>
+          AI was used in this project for helping locate data source leads, commenting on code for
+          legibility, and cleaning up grammatical errors. AI was not used to write or complete any
+          components where AI use is prohibited.
+        </p>
+      </div>
+
+    </div>
   </main>
 
   <footer>
-    <p>
-      GEOG 458 Final Project – Group 05 &nbsp;|&nbsp;
-      Data sources: King County GIS Open Data, Seattle GeoData
-    </p>
+    <p>GEOG 458 Final Project – Group 05 &nbsp;·&nbsp; Data: King County GIS Open Data &amp; Seattle GeoData</p>
   </footer>
 
 </body>
